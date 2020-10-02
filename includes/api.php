@@ -108,7 +108,8 @@ class Api {
 			}
 
 			if ( isset( $info_data['library'] ) ) {
-				$info_data['library']['categories'] = json_decode( $info_data['library']['categories'] );
+				// see https://stackoverflow.com/q/51672055
+				// $info_data['library']['categories'] = json_decode( $info_data['library']['categories'] );
 
 				update_option( self::LIBRARY_OPTION_KEY, $info_data['library'], 'no' );
 
